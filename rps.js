@@ -55,7 +55,7 @@ function game() {
         scoreKeeper();
     } if (playerScore === computerScore) {
         console.log("**----------------------///--------------------------**")
-        console.log("You and the computer threw the same, it's a tie.");
+        console.log("On the bright side, you can tell people you're at least as smart as a computer? ಠ_ಠ.");
         console.log("Game Over. Type 'game()' to play again!")
         scoreKeeper();
     } else if (playerScore > computerScore) {;
