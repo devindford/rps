@@ -6,36 +6,40 @@ computerScore = 0;
 
 // *User Selection
 let userChoice = () => {    
-    let choice = prompt("Pick rock, paper, or scissors").toLowerCase();
-    return choice;
+    let playerChoice = prompt("Pick rock, paper, or scissors").toLowerCase();
+    return playerChoice;
 }
 
 //*Computer choice
+//! Changed to an array
 const computerChoice = () => {
-    let compNumber = Math.floor(Math.random() * 3);
-    switch (compNumber) {
-        case 0:
-            return "rock";
-        case 1:
-            return "paper";
-        case 2: 
-            return "scissors";
-    }
+    let x = Math.floor(Math.random() * 3);
+    let aiChoice = ["rock", "paper", "scissors"];
+    return aiChoice[x];
+    // let compNumber = Math.floor(Math.random() * 3);
+    // switch (compNumber) {
+    //     case 0:
+    //         return "rock";
+    //     case 1:
+    //         return "paper";
+    //     case 2: 
+    //         return "scissors";
+    // }
 }
 const compChoice = computerChoice();
 
 //* Winner selection
-let pickWinner = (compChoice, choice) => {
-    console.log(` Computer picked: ${compChoice}  |  You Picked ${choice}`);
-    if ((choice === "rock" && compChoice === "paper") || (choice === "paper" && compChoice === "scissors") || 
-    (choice === "scissors" && compChoice === "rock")) {
+let pickWinner = (compChoice, playerChoice) => {
+    console.log(` Computer picked: ${compChoice}  |  You Picked ${playerChoice}`);
+    if ((playerChoice === "rock" && compChoice === "paper") || (playerChoice === "paper" && compChoice === "scissors") || 
+    (playerChoice === "scissors" && compChoice === "rock")) {
         console.log("Point for the computer this round");
         computerScore++;
-    } else if ((choice === "paper" && compChoice === "rock") || (choice === "scissors" && compChoice === "paper") || 
-    (choice === "rock" && compChoice === "scissors")) {
+    } else if ((playerChoice === "paper" && compChoice === "rock") || (playerChoice === "scissors" && compChoice === "paper") || 
+    (playerChoice === "rock" && compChoice === "scissors")) {
         console.log("Point for you this round");
         playerScore++;
-    } else if (compChoice === choice) {
+    } else if (compChoice === playerChoice) {
         console.log("No points for either this round");
     } else {
         console.log("Invalid Choice");
