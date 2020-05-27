@@ -1,1 +1,47 @@
-/* For later use */
+main {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(172, 172, 172);
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons button {
+    width: 150px;
+    height: 150px;
+    border: 0;
+    outline: 0;
+    margin: 0 100;
+}
+
+#rock {
+    background: url("imgs/rust-rock-png-4.png");
+    background-size: 100%;
+}
+
+#paper {
+    background: url("imgs/pngguru.com.png");
+    background-size: 80% 75%;
+    background-repeat: no-repeat;
+    background-position: center;
+    
+}
+
+#scissors {
+    background: url("imgs/Scissors-icon.png");
+    background-size: 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+button#rock:hover, 
+button#paper:hover, 
+button#scissors:hover {
+    opacity: .9;
+    border-radius: 10%;
+    box-shadow: 1px 1px 1px 1px black;
+}

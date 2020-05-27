@@ -1,14 +1,31 @@
+const rockBtn = document.querySelector("#rock");
+const paperBtn = document.querySelector("#paper");
+const scissorBtn = document.querySelector("#scissors");
+const roundWinner = document.querySelector("#roundWinner");
+const currentScore = document.querySelector("#score");
+const compPick = document.querySelector("#compPick");
+const h3 = document.querySelector("h3");
+const afterGame = document.querySelector("#afterGame");
+const buttons = document.querySelector(".buttons");
+const results = document.querySelector("#results");
+const info = document.querySelector("#info");
+const resetBtn = document.createElement('button');
+let playerScore = 0;
+let computerScore = 0;
+
+
+//!RPS GAME FUNCTIONS BELOW!//
+
 // *Score clear
 function clearScore() {
 playerScore = 0;
 computerScore = 0;
 };
-
 // *User Selection
-let userChoice = () => {    
-    let playerChoice = prompt("Pick rock, paper, or scissors").toLowerCase();
-    return playerChoice;
+let userChoice = (choice) => {    
+   playerChoice = choice;
 }
+
 
 //*Computer choice
 //! Changed to an array
@@ -16,66 +33,68 @@ const computerChoice = () => {
     let x = Math.floor(Math.random() * 3);
     let aiChoice = ["rock", "paper", "scissors"];
     return aiChoice[x];
-    // let compNumber = Math.floor(Math.random() * 3);
-    // switch (compNumber) {
-    //     case 0:
-    //         return "rock";
-    //     case 1:
-    //         return "paper";
-    //     case 2: 
-    //         return "scissors";
-    // }
 }
 const compChoice = computerChoice();
 
 //* Winner selection
 let pickWinner = (compChoice, playerChoice) => {
-    console.log(` Computer picked: ${compChoice}  |  You Picked ${playerChoice}`);
+    compPick.textContent = `Computer picked: ${compChoice}`;
     if ((playerChoice === "rock" && compChoice === "paper") || (playerChoice === "paper" && compChoice === "scissors") || 
     (playerChoice === "scissors" && compChoice === "rock")) {
-        console.log("Point for the computer this round");
+        roundWinner.textContent = "Point for the computer this round";
         computerScore++;
     } else if ((playerChoice === "paper" && compChoice === "rock") || (playerChoice === "scissors" && compChoice === "paper") || 
     (playerChoice === "rock" && compChoice === "scissors")) {
-        console.log("Point for you this round");
+        roundWinner.textContent = "Point for you this round";
         playerScore++;
-    } else if (compChoice === playerChoice) {
-        console.log("No points for either this round");
     } else {
-        console.log("Invalid Choice");
+        roundWinner.textContent = `No points for either this round, you both picked ${playerChoice}`;
     }
 }
 //* Keeps score
 function scoreKeeper() {
-    console.log(`Your score: ${playerScore} ||| Computer Score: ${computerScore}`);
+    currentScore.textContent = `Your score: ${playerScore} ||| Computer Score: ${computerScore}`;
 }
 
 //*Runs the game
 function game() {
-    console.clear();
-    clearScore();
-    for (i = 0; i < 5; i++) {
-        pickWinner(computerChoice(), userChoice());
+        pickWinner(computerChoice(), playerChoice);
         scoreKeeper();
-    } if (playerScore === computerScore) {
-        console.log("**----------------------///--------------------------**")
-        console.log("On the bright side, you can tell people you're at least as smart as a computer? ಠ_ಠ.");
-        console.log("Game Over. Type 'game()' to play again!")
-        scoreKeeper();
-    } else if (playerScore > computerScore) {;
-        console.log("**----------------------///--------------------------**")
-        console.log("You won!!");
-        console.log("Game Over. Type 'game()' to play again!")
-        scoreKeeper();
-    } else if (playerScore < computerScore) {
-        console.log("**----------------------///--------------------------**")
-        console.log("You lost to the computer, you bot.");
-        console.log("Game Over. Type 'game()' to play again!")
-        scoreKeeper();
+        if (playerScore === 5) {
+            afterGame.removeChild(buttons);
+            afterGame.removeChild(results);
+            afterGame.removeChild(info)
+            afterGame.appendChild(h3);
+            h3.classList.add("winner");
+            h3.classList.remove("round");
+            afterGame.appendChild(currentScore);
+            afterGame.appendChild(resetBtn);
+            resetBtn.textContent = "Play Again"
+            h3.textContent = "You Won!";
+            scoreKeeper();
+            clearScore();
+        } else if (computerScore === 5) {
+            afterGame.removeChild(buttons);
+            afterGame.removeChild(results);
+            afterGame.removeChild(info);
+            afterGame.appendChild(h3);
+            h3.classList.add("winner");
+            h3.classList.remove("round");
+            afterGame.appendChild(currentScore);
+            afterGame.appendChild(resetBtn);
+            resetBtn.textContent = "Play Again"
+            h3.textContent = "The Computer Won =(";
+            scoreKeeper();
+            clearScore();
+        };
     }
-}
-//! setTimeout adds a delay prior to the start of the game to allow the user to open the console
-let delayInMilliseconds = 2500;
-setTimeout(function () {
-    game();
-  }, delayInMilliseconds);
+
+    function reset() {
+        document.location.href = "";
+    }
+
+resetBtn.addEventListener ("click", reset);
+rockBtn.addEventListener ("click", () => {userChoice("rock"); game()});
+paperBtn.addEventListener("click", () => {userChoice("paper"); game()});
+scissorBtn.addEventListener("click", () => {userChoice("scissors"); game()});
+
