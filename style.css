@@ -1,7 +1,7 @@
-main {
+body {
     margin: 0;
     padding: 0;
-    background-color: rgb(172, 172, 172);
+    background: linear-gradient(to right, rgb(22, 126, 193), rgb(56, 243, 139));
 }
 
 .buttons {
