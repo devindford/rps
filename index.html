@@ -3,32 +3,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caudex:wght@700&family=Chelsea+Market&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-<div id="afterGame">
-    <div id="info">
-      <h1>Rock Paper Scissors</h1>
-      <p id="intro">Classic game of Rock, Paper, and Scissors. Choose what to throw vs the computer, first to 5 wins!</p>
-      <h2>RULES:</h2>
-      <ol id="rules">
-          <li>Rock beats Scissors</li>
-          <li>Paper beats Rock</li>
-          <li>Scissors beats Paper</li>
-      </ol>
-    </div>
-    <div class="buttons">
-      <button id="rock"></button>
-      <button id="paper"></button>
-      <button id="scissors"></button>
-    </div>
-    <div id="results">
+    <div class="afterGame">
+      <div class="info">
+        <h1>Rock Paper Scissors</h1>
+        <p id="intro">
+          Classic game of Rock, Paper, and Scissors. Choose what to throw vs the
+          computer, first to 5 wins!
+        </p>
+        <div class="rules">
+          <h2>RULES:</h2>
+          <ol class="list">
+            <li>Rock beats Scissors</li>
+            <li>Paper beats Rock</li>
+            <li>Scissors beats Paper</li>
+          </ol>
+        </div>
+      </div>
+      <div class="buttons">
+        <button id="rock"></button>
+        <button id="paper"></button>
+        <button id="scissors"></button>
+      </div>
+      <div class="results">
         <h3 class="round">Round Winner:</h3>
         <h4 id="compPick"></h4>
         <p id="roundWinner"></p>
         <p id="score"></p>
+      </div>
     </div>
-</div>
     <script src="rps.js"></script>
   </body>
 </html>

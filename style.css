@@ -1,47 +1,92 @@
 body {
-    margin: 0;
-    padding: 0;
-    background: linear-gradient(to right, rgb(22, 126, 193), rgb(56, 243, 139));
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, rgb(22, 126, 193), rgb(56, 243, 139));
+  font-family: 'Caudex', serif;
 }
 
+/* *Text Styles */
+.info p {
+    text-align: center;
+    margin-top: -5px;
+}
+
+h2, h1 {
+    font-family: 'Chelsea Market', cursive;
+}
+
+h1 {
+    text-align: center;
+    font-size: 5em;
+    margin: 0;
+}
+
+.intro {
+    text-align: center;
+    font-size: 1.2em;
+}
+
+.results {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.rules {
+    text-align: right;
+    width: 98%;
+    z-index: -1;
+}
+
+.rules h2 {
+    margin-right: 20px;
+    font-size: 1.9em;
+}
+
+ol {
+    list-style: none;
+    font-size: 1em;
+}
+
+
+/* *Button Styles */
 .buttons {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .buttons button {
-    width: 150px;
-    height: 150px;
-    border: 0;
-    outline: 0;
-    margin: 0 100;
+  width: 150px;
+  height: 150px;
+  border: 0;
+  outline: 0;
+  margin: 0 100;
 }
 
 #rock {
-    background: url("imgs/rust-rock-png-4.png");
-    background-size: 100%;
+  background: url("imgs/rust-rock-png-4.png");
+  background-size: 100%;
 }
 
 #paper {
-    background: url("imgs/pngguru.com.png");
-    background-size: 80% 75%;
-    background-repeat: no-repeat;
-    background-position: center;
-    
+  background: url("imgs/pngguru.com.png");
+  background-size: 80% 75%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 #scissors {
-    background: url("imgs/Scissors-icon.png");
-    background-size: 90%;
-    background-repeat: no-repeat;
-    background-position: center;
+  background: url("imgs/Scissors-icon.png");
+  background-size: 90%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-button#rock:hover, 
-button#paper:hover, 
+button#rock:hover,
+button#paper:hover,
 button#scissors:hover {
-    opacity: .9;
-    border-radius: 10%;
-    box-shadow: 1px 1px 1px 1px black;
+  opacity: 0.9;
+  border-radius: 10%;
+  width: 165px;
+  height: 165px;
 }
