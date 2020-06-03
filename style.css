@@ -1,6 +1,13 @@
-body {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
   background: linear-gradient(to right, rgb(22, 126, 193), rgb(56, 243, 139));
   font-family: "Caudex", serif;
 }
@@ -18,75 +25,121 @@ h1 {
 
 h1 {
   text-align: center;
-  font-size: 5em;
+  font-size: 5vw;
   margin: 0;
 }
 
 .intro {
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1.2vw;
+  padding: 2rem 0;
 }
 
 .results {
   text-align: center;
+  font-size: 2.3rem;
   padding-top: 100px;
 }
 
+.results h3 {
+  font-size: 4rem;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  background: bisque;
+  height: 50vh;
+  align-items: center;
+  overflow: hidden;
+}
+
 .rules {
-  text-align: right;
-  width: 98%;
-  z-index: -1;
+  order: 2;
+  flex-basis: 17rem;
+  text-align: center;
+  margin-left: 24vw;
+  margin-right: 6vw;
 }
 
 .rules h2 {
-  margin-right: 20px;
-  font-size: 1.9em;
+  font-size: 3rem;
+  padding-bottom: 1rem;
 }
 
 ol {
   list-style: none;
-  font-size: 1em;
+  font-size: 1.8rem;
 }
 
 /* *Button Styles */
 .buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  order: 1;
+  margin-left: auto;
 }
 
 .buttons button {
-  width: 150px;
-  height: 150px;
+  width: 15rem;
+  height: 15rem;
   border: 0;
   outline: 0;
   margin: 0 100;
 }
 
-#rock {
+.rock {
   background: url("imgs/rust-rock-png-4.png");
   background-size: 100%;
 }
 
-#paper {
+.paper {
   background: url("imgs/pngguru.com.png");
   background-size: 80% 75%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-#scissors {
+.scissors {
   background: url("imgs/Scissors-icon.png");
   background-size: 90%;
   background-repeat: no-repeat;
   background-position: center;
 }
 
-button#rock:hover,
-button#paper:hover,
-button#scissors:hover {
+button.rock:hover,
+button.paper:hover,
+button.scissors:hover {
   opacity: 0.9;
   border-radius: 10%;
   width: 165px;
   height: 165px;
+  cursor: pointer;
+}
+
+/** After Win */
+
+.winner {
+  font-size: 15rem;
+  text-align: center;
+}
+
+.winning-score {
+  font-size: 10rem;
+  text-align: center;
+}
+
+.reset-button {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  height: 8rem;
+  width: 25rem;
+  border-radius: 10rem;
+  margin-top: 15rem;
+  background: linear-gradient(to right, rgb(201, 54, 108), rgb(189, 63, 50));
+  border: none;
+}
+
+.reset-button:hover {
+  box-shadow: 0.3rem 0.3rem rgb(0, 0, 0);
+  cursor: pointer;
 }

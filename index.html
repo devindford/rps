@@ -14,29 +14,31 @@
     <div class="afterGame">
       <div class="info">
         <h1>Rock Paper Scissors</h1>
-        <p id="intro">
+        <p class="intro">
           Classic game of Rock, Paper, and Scissors. Choose what to throw vs the
           computer, first to 5 wins!
         </p>
-        <div class="rules">
-          <h2>RULES:</h2>
-          <ol class="list">
-            <li>Rock beats Scissors</li>
-            <li>Paper beats Rock</li>
-            <li>Scissors beats Paper</li>
-          </ol>
+        <div class="container">
+          <div class="rules">
+            <h2>RULES:</h2>
+            <ol class="list">
+              <li>Rock beats Scissors</li>
+              <li>Paper beats Rock</li>
+              <li>Scissors beats Paper</li>
+            </ol>
+          </div>
+          <div class="buttons">
+            <button class="rock"></button>
+            <button class="paper"></button>
+            <button class="scissors"></button>
+          </div>
         </div>
-      </div>
-      <div class="buttons">
-        <button id="rock"></button>
-        <button id="paper"></button>
-        <button id="scissors"></button>
       </div>
       <div class="results">
         <h3 class="round">Round Winner:</h3>
-        <h4 id="compPick"></h4>
-        <p id="roundWinner"></p>
-        <p id="score"></p>
+        <h4 class="compPick"></h4>
+        <p class="roundWinner"></p>
+        <p class="score"></p>
       </div>
     </div>
     <script src="rps.js"></script>

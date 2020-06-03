@@ -1,10 +1,11 @@
-const rockBtn = document.querySelector("#rock");
-const paperBtn = document.querySelector("#paper");
-const scissorBtn = document.querySelector("#scissors");
-const roundWinner = document.querySelector("#roundWinner");
-const currentScore = document.querySelector("#score");
-const compPick = document.querySelector("#compPick");
+const rockBtn = document.querySelector(".rock");
+const paperBtn = document.querySelector(".paper");
+const scissorBtn = document.querySelector(".scissors");
+const roundWinner = document.querySelector(".roundWinner");
+const currentScore = document.querySelector(".score");
+const compPick = document.querySelector(".compPick");
 const h3 = document.querySelector("h3");
+const container = document.querySelector(".container");
 const afterGame = document.querySelector(".afterGame");
 const buttons = document.querySelector(".buttons");
 const results = document.querySelector(".results");
@@ -57,7 +58,7 @@ let pickWinner = (compChoice, playerChoice) => {
 };
 //* Keeps score
 function scoreKeeper() {
-  currentScore.textContent = `Your score: ${playerScore} ||| Computer Score: ${computerScore}`;
+  currentScore.textContent = `Your score: ${playerScore} || Computer Score: ${computerScore}`;
 }
 
 //*Runs the game
@@ -65,7 +66,7 @@ function game() {
   pickWinner(computerChoice(), playerChoice);
   scoreKeeper();
   if (playerScore === 5) {
-    afterGame.removeChild(buttons);
+    container.removeChild(buttons);
     afterGame.removeChild(results);
     afterGame.removeChild(info);
     afterGame.appendChild(h3);
@@ -73,12 +74,14 @@ function game() {
     h3.classList.remove("round");
     afterGame.appendChild(currentScore);
     afterGame.appendChild(resetBtn);
+    currentScore.classList.add("winning-score");
+    resetBtn.classList.add("reset-button");
     resetBtn.textContent = "Play Again";
     h3.textContent = "You Won!";
     scoreKeeper();
     clearScore();
   } else if (computerScore === 5) {
-    afterGame.removeChild(buttons);
+    container.removeChild(buttons);
     afterGame.removeChild(results);
     afterGame.removeChild(info);
     afterGame.appendChild(h3);
@@ -86,6 +89,8 @@ function game() {
     h3.classList.remove("round");
     afterGame.appendChild(currentScore);
     afterGame.appendChild(resetBtn);
+    currentScore.classList.add("winning-score");
+    resetBtn.classList.add("reset-button");
     resetBtn.textContent = "Play Again";
     h3.textContent = "The Computer Won =(";
     scoreKeeper();
