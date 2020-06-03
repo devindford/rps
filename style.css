@@ -58,8 +58,8 @@ h1 {
   order: 2;
   flex-basis: 17rem;
   text-align: center;
-  margin-left: 24vw;
-  margin-right: 6vw;
+  margin-left: 21vw;
+  margin-right: 3vw;
 }
 
 .rules h2 {
@@ -83,7 +83,12 @@ ol {
   height: 15rem;
   border: 0;
   outline: 0;
-  margin: 0 100;
+}
+
+.rock,
+.paper,
+.scissors {
+  margin: 0 3rem;
 }
 
 .rock {
@@ -137,6 +142,7 @@ button.scissors:hover {
   margin-top: 15rem;
   background: linear-gradient(to right, rgb(201, 54, 108), rgb(189, 63, 50));
   border: none;
+  outline: 0;
 }
 
 .reset-button:hover {
