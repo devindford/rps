@@ -77,6 +77,7 @@ ol {
   order: 1;
   margin-left: auto;
   border: thick double rgb(31, 31, 31);
+  background: rgba(0, 0, 0, 0.2);
   height: 25vh;
   display: flex;
   align-items: center;
