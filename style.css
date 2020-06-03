@@ -38,7 +38,7 @@ h1 {
 .results {
   text-align: center;
   font-size: 2.3rem;
-  padding-top: 100px;
+  padding-top: 5rem;
 }
 
 .results h3 {
@@ -47,8 +47,8 @@ h1 {
 
 .container {
   display: flex;
+  flex-direction: row;
   justify-content: center;
-  background: bisque;
   height: 50vh;
   align-items: center;
   overflow: hidden;
@@ -76,6 +76,10 @@ ol {
 .buttons {
   order: 1;
   margin-left: auto;
+  border: thick double rgb(31, 31, 31);
+  height: 25vh;
+  display: flex;
+  align-items: center;
 }
 
 .buttons button {
@@ -115,8 +119,8 @@ button.paper:hover,
 button.scissors:hover {
   opacity: 0.9;
   border-radius: 10%;
-  width: 165px;
-  height: 165px;
+  width: 15.5rem;
+  height: 15.5rem;
   cursor: pointer;
 }
 
@@ -143,9 +147,15 @@ button.scissors:hover {
   background: linear-gradient(to right, rgb(201, 54, 108), rgb(189, 63, 50));
   border: none;
   outline: 0;
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  font-weight: 500;
 }
 
 .reset-button:hover {
   box-shadow: 0.3rem 0.3rem rgb(0, 0, 0);
   cursor: pointer;
+  background: rgb(255, 255, 255);
+  color: rgb(201, 54, 108);
+  font-weight: 900;
 }
